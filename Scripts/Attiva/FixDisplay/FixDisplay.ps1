@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Check if running as admin, if not, prompt for UAC and re-run
 
 if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator'))
@@ -19,10 +18,6 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 ""
 "Please wait while we run some fixes..."
-=======
-""
-"Running Graphics Fix"
->>>>>>> e56aa8127e5934fc5ea5fe9e0c6596bfae08f1a1
 ""
 "Gathering diagnostic information..."
 
