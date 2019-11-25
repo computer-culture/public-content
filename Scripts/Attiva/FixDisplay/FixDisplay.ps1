@@ -1,4 +1,23 @@
-"Running Graphics Fix"
+# Check if running as admin, if not, prompt for UAC and re-run
+
+if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator'))
+{
+    "*** Graphics reset utility by Computer Culture ***"
+    ""
+    "Please choose YES on the next screen when asked about making changes to your computer"
+
+    Start-Sleep 5
+
+    if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000)
+    {
+        $CommandLine = "-File `"" + $MyInvocation.MyCommand.Path
+        Start-Process -FilePath PowerShell.exe -Verb Runas -ArgumentList $CommandLine
+        Exit
+    }
+}
+
+""
+"Please wait while we run some fixes..."
 ""
 "Gathering diagnostic information..."
 
@@ -41,7 +60,10 @@ $RunningProcesses = Get-Process
 $RunningApps = $RunningProcesses | Where-Object {$_.MainWindowTitle} | Select-Object Name, MainWindowTitle
 $RunningApps | Out-File $OutputFilePath -Append
 
-"Reloading graphics adaptor...screens will go blank momentarily"
+""
+"*** Screens will go blank momentarily ***"
+""
+"Reloading graphics adaptor..."
 
 Start-Sleep 2
 
@@ -99,4 +121,30 @@ Win 163 161 66
 # 161 = shift key
 # 66 = b key
 
-   
+Start-Sleep 5
+
+""
+"Restarting Windows Desktop Manager..."
+
+Start-Sleep 2
+
+taskkill /IM "dwm.exe" /F
+
+""
+""
+""
+""
+""
+"---------------------------------------------------------------------"
+""
+"DONE!"
+""
+"This is a workaround fix to remove any current problems."
+""
+"If you still have issues with your display immediately after running this utility, Please advise Computer Culture."
+""
+"You can now close this window."
+""
+"---------------------------------------------------------------------"
+
+Start-Sleep 20
