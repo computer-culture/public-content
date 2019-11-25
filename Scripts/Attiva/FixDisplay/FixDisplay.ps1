@@ -1,3 +1,4 @@
+""
 "Running Graphics Fix"
 ""
 "Gathering diagnostic information..."
