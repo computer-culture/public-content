@@ -124,11 +124,19 @@ Win 163 161 66
 Start-Sleep 5
 
 ""
-"Restarting Windows Desktop Manager..."
+"Cycling monitors, step 1..."
 
 Start-Sleep 2
 
-taskkill /IM "dwm.exe" /F
+displayswitch /internal
+
+Start-Sleep 10
+
+"Cycling monitors, step 2..."
+
+displayswitch /extend
+
+Start-Sleep 10
 
 ""
 ""
