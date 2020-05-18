@@ -19,9 +19,6 @@ ncentral_install_script_delay=20
 powershell_folder="/usr/local/microsoft/powershell/7.0.0"
 powershell_symlink="/usr/local/bin/pwsh"
 
-sudo rm "$plist_output_path"
-sudo rm "$plist_error_path"
-
 test_powershell()
 {
     # Check if PowerShell is installed, and if not, install it
@@ -88,35 +85,36 @@ echo "Downloading N-central install files..."
 echo ""
 curl -k -o /tmp/MacAgentInstallation.dmg "https://$ncentral_server/download/current/macosx/N-central/MacAgentInstallation.dmg"
 curl -k -o /tmp/dmg-install.sh.tar.gz "https://$ncentral_server/download/current/macosx/N-central/dmg-install.sh.tar.gz"
-tar -zxvf /tmp/dmg-install.sh.tar.gz
 echo ""
 echo "N-central install files downloaded."
-echo ""
+echo "Extracting SolarWinds agent install script..."
+tar -zxvf /tmp/dmg-install.sh.tar.gz
+echo "Done."
 
 echo "$separator"
 
 # Write script that will be executed after current agent uninstalled
-echo "Writing post-uninstall script ($ncentral_install_script)..."
+echo "Writing daemon script ($ncentral_install_script)..."
 cat > $ncentral_install_script << DAEMONSCRIPT
 #!/bin/bash
 
 remove_take_control()
 {
-        rm "/Applications/MSP Anywhere Agent N-central.app"
-        rm -rf "/Library/Logs/MSP Anywhere Agent N-central"
-        rm -rf "/Library/Logs/MSP Anywhere Installer"
-        rm -rf "/Library/MSP Anywhere Agent N-central"
-        rm "/Library/LaunchDaemons/MSPAnywhereDaemonN-central.plist"
-        rm "/Library/LaunchDaemons/MSPAnywhereHelperN-central.plist"
-        rm "/Library/LaunchAgents/MSPAnywhereAgentN-central.plist"
-        rm "/Library/LaunchAgents/MSPAnywhereAgentPLN-central.plist"
-        rm "/Library/LaunchAgents/MSPAnywhereServiceConfiguratorN-central.plist"
-        rm -rf "/Library/PrivilegedHelperTools/MSP Anywhere Agent N-central.app"
+        sudo rm "/Applications/MSP Anywhere Agent N-central.app"
+        sudo rm -rf "/Library/Logs/MSP Anywhere Agent N-central"
+        sudo rm -rf "/Library/Logs/MSP Anywhere Installer"
+        sudo rm -rf "/Library/MSP Anywhere Agent N-central"
+        sudo rm "/Library/LaunchDaemons/MSPAnywhereDaemonN-central.plist"
+        sudo rm "/Library/LaunchDaemons/MSPAnywhereHelperN-central.plist"
+        sudo rm "/Library/LaunchAgents/MSPAnywhereAgentN-central.plist"
+        sudo rm "/Library/LaunchAgents/MSPAnywhereAgentPLN-central.plist"
+        sudo rm "/Library/LaunchAgents/MSPAnywhereServiceConfiguratorN-central.plist"
+        sudo rm -rf "/Library/PrivilegedHelperTools/MSP Anywhere Agent N-central.app"
 }
 
 echo ""
 echo "Removing previous N-central agent if it exists..."
-/Applications/Mac_Agent.app/Contents/Daemon/usr/sbin/uninstall-nagent y
+sudo /Applications/Mac_Agent.app/Contents/Daemon/usr/sbin/uninstall-nagent y
 
 echo ""
 echo "Removing any remnants of Take Control..."
@@ -136,10 +134,10 @@ sudo rm $daemon_plist_path
 DAEMONSCRIPT
 
 # Mark above script as executable
-echo "Marking post-uninstall script as executable..."
+echo "Marking daemon script as executable..."
 sudo chmod +x $ncentral_install_script
 
-# We will use a launchctl global daemon to schedule the above script to happen later
+# We will use a launchd global daemon to schedule the above script to happen later
 # This is done as if this script is run from Take Control, execution seems to cancel as Take Control is uninstalled.
 
 # First remove any previous daemon
@@ -147,8 +145,12 @@ echo "Removing previous Global Daemon if it exists ($daemon_plist_path)..."
 sudo launchctl unload $daemon_plist_path
 sudo rm $daemon_plist_path
 
+# Clear previous daemon script results
+sudo rm "$plist_output_path"
+sudo rm "$plist_error_path"
+
 # Write the daemon plist file
-echo "Writing Global Daemon file for post-uninstall script (to re-install N-central agent)..."
+echo "Writing daemon plist file..."
 cat > $daemon_plist_path << PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -172,11 +174,15 @@ cat > $daemon_plist_path << PLIST
 PLIST
 
 # Load the Daemon
-echo "Loading the Global Daemon for post-uninstall script..."
+echo "Loading the daemon..."
 sudo launchctl load $daemon_plist_path
+echo "Daemon loaded."
 
 echo "$separator"
 
 echo "Please wait for N-central agent to reinstall itself."
+echo "The daemon script will execute in $ncentral_install_script_delay seconds"
+echo "Daemon output will be written here: $plist_output_path"
+echo "Daemon errors will be written here: $plist_error_path"
 
 echo "$separator"
