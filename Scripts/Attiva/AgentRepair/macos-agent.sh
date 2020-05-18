@@ -161,7 +161,7 @@ cat > $daemon_plist_path << PLIST
         <key>StandardOutPath</key>
         <string>$plist_output_path</string>
         <key>StandardErrorPath</key>
-        <string>$plist_output_path.err</string>
+        <string>$plist_error_path</string>
         <key>ProgramArguments</key>
         <array>
                 <string>/bin/sh</string>
