@@ -132,6 +132,9 @@ sleep 10
 
 # Remove Global Daemon file
 sudo rm $daemon_plist_path
+
+sudo launchctl stop com.n-able.agent-macos10_4ppc
+sudo launchctl start com.n-able.agent-macos10_4ppc
 DAEMONSCRIPT
 
 # Mark above script as executable
