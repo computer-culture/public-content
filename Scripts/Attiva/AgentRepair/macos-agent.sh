@@ -17,20 +17,6 @@ ncentral_install_script_delay=60
 powershell_folder="/usr/local/microsoft/powershell/7.0.0"
 powershell_symlink="/usr/local/bin/pwsh"
 
-remove_take_control()
-{
-        rm "/Applications/MSP Anywhere Agent N-central.app"
-        rm -rf "/Library/Logs/MSP Anywhere Agent N-central"
-        rm -rf "/Library/Logs/MSP Anywhere Installer"
-        rm -rf "/Library/MSP Anywhere Agent N-central"
-        rm "/Library/LaunchDaemons/MSPAnywhereDaemonN-central.plist"
-        rm "/Library/LaunchDaemons/MSPAnywhereHelperN-central.plist"
-        rm "/Library/LaunchAgents/MSPAnywhereAgentN-central.plist"
-        rm "/Library/LaunchAgents/MSPAnywhereAgentPLN-central.plist"
-        rm "/Library/LaunchAgents/MSPAnywhereServiceConfiguratorN-central.plist"
-        rm "/Library/PrivilegedHelperTools/MSP Anywhere Agent N-central.app"
-}
-
 test_powershell()
 {
     # Check if PowerShell is installed, and if not, install it
@@ -108,6 +94,29 @@ echo "$separator"
 echo "Writing post-uninstall script ($ncentral_install_script)..."
 cat > $ncentral_install_script << DAEMONSCRIPT
 #!/bin/bash
+
+remove_take_control()
+{
+        rm "/Applications/MSP Anywhere Agent N-central.app"
+        rm -rf "/Library/Logs/MSP Anywhere Agent N-central"
+        rm -rf "/Library/Logs/MSP Anywhere Installer"
+        rm -rf "/Library/MSP Anywhere Agent N-central"
+        rm "/Library/LaunchDaemons/MSPAnywhereDaemonN-central.plist"
+        rm "/Library/LaunchDaemons/MSPAnywhereHelperN-central.plist"
+        rm "/Library/LaunchAgents/MSPAnywhereAgentN-central.plist"
+        rm "/Library/LaunchAgents/MSPAnywhereAgentPLN-central.plist"
+        rm "/Library/LaunchAgents/MSPAnywhereServiceConfiguratorN-central.plist"
+        rm "/Library/PrivilegedHelperTools/MSP Anywhere Agent N-central.app"
+}
+
+echo ""
+echo "Removing previous N-central agent if it exists..."
+/Applications/Mac_Agent.app/Contents/Daemon/usr/sbin/uninstall-nagent y
+
+echo ""
+echo "Removing any remnants of Take Control..."
+remove_take_control
+
 echo "Installing N-central agent..."
 cd /tmp
 /tmp/dmg-install.sh -k $activation_key
@@ -160,16 +169,6 @@ PLIST
 # Load the Daemon
 echo "Loading the Global Daemon for post-uninstall script..."
 sudo launchctl load $daemon_plist_path
-
-echo "$separator"
-
-echo ""
-echo "Removing previous N-central agent if it exists..."
-/Applications/Mac_Agent.app/Contents/Daemon/usr/sbin/uninstall-nagent y
-
-echo ""
-echo "Removing any remnants of Take Control..."
-remove_take_control
 
 echo "$separator"
 
