@@ -11,11 +11,16 @@ ncentral_server="support.attiva.co.nz"
 activation_key=$1
 
 daemon_plist_path="/Library/LaunchDaemons/AttivaAgent.local.plist"
+plist_output_path="/tmp/AttivaAgent.local.out"
+plist_error_path="/tmp/AttivaAgent.local.err"
 ncentral_install_script="/tmp/ncentral-install.sh"
-ncentral_install_script_delay=60
+ncentral_install_script_delay=20
 
 powershell_folder="/usr/local/microsoft/powershell/7.0.0"
 powershell_symlink="/usr/local/bin/pwsh"
+
+sudo rm "$plist_output_path"
+sudo rm "$plist_error_path"
 
 test_powershell()
 {
@@ -106,7 +111,7 @@ remove_take_control()
         rm "/Library/LaunchAgents/MSPAnywhereAgentN-central.plist"
         rm "/Library/LaunchAgents/MSPAnywhereAgentPLN-central.plist"
         rm "/Library/LaunchAgents/MSPAnywhereServiceConfiguratorN-central.plist"
-        rm "/Library/PrivilegedHelperTools/MSP Anywhere Agent N-central.app"
+        rm -rf "/Library/PrivilegedHelperTools/MSP Anywhere Agent N-central.app"
 }
 
 echo ""
@@ -152,9 +157,9 @@ cat > $daemon_plist_path << PLIST
         <key>Label</key>
         <string>AttivaAgent.local</string>
         <key>StandardOutPath</key>
-        <string>/tmp/AttivaAgent.local.out</string>
+        <string>$plist_output_path</string>
         <key>StandardErrorPath</key>
-        <string>/tmp/AttivaAgent.local.err</string>
+        <string>$plist_output_path.err</string>
         <key>ProgramArguments</key>
         <array>
                 <string>/bin/sh</string>
