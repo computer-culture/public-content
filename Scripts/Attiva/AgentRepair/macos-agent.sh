@@ -169,6 +169,7 @@ echo "Removing previous N-central agent if it exists..."
 
 echo ""
 echo "Removing any remnants of Take Control..."
+remove_take_control
 
 echo "$separator"
 
