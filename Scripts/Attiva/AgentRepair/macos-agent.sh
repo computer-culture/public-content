@@ -88,6 +88,7 @@ curl -k -o /tmp/dmg-install.sh.tar.gz "https://$ncentral_server/download/current
 echo ""
 echo "N-central install files downloaded."
 echo "Extracting SolarWinds agent install script..."
+cd /tmp
 tar -zxvf /tmp/dmg-install.sh.tar.gz
 echo "Done."
 
