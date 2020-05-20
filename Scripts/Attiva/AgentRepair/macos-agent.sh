@@ -184,9 +184,12 @@ echo "Daemon loaded."
 
 echo "$separator"
 
-echo "Please wait for N-central agent to reinstall itself."
 echo "The daemon script will execute in $ncentral_install_script_delay seconds"
 echo "Daemon output will be written here: $plist_output_path"
 echo "Daemon errors will be written here: $plist_error_path"
+
+echo ""
+echo "*** Please wait for N-central agent to be installed / repaired ***"
+echo ""
 
 echo "$separator"
