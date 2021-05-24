@@ -16,7 +16,7 @@ plist_error_path="/tmp/AttivaAgent.local.err"
 ncentral_install_script="/tmp/ncentral-install.sh"
 ncentral_install_script_delay=20
 
-powershell_folder="/usr/local/microsoft/powershell/7.0.0"
+powershell_folder="/usr/local/microsoft/powershell/7"
 powershell_symlink="/usr/local/bin/pwsh"
 
 test_powershell()
@@ -44,7 +44,7 @@ install_powershell()
     sudo rm /tmp/powershell.tar.gz
     
     # Download the powershell '.tar.gz' archive
-    curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-osx-x64.tar.gz
+    curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/powershell-7.1.3-osx-x64.tar.gz
 
     # Create the target folder where powershell will be placed
     sudo mkdir -p $powershell_folder
