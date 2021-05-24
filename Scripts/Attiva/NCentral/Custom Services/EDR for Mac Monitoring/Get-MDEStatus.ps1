@@ -51,9 +51,9 @@ $MDEHealthStatus = /usr/local/bin/mdatp health
 ""
 "Results:"
 
-$MDEHealthy = Get-StatusValue -StatusObject $MDEAgentStatusRaw -Item "healthy"
-$MDELicensed = Get-StatusValue -StatusObject $MDEAgentStatusRaw -Item "licensed"
-$MDERealTimeProtectionEnabled = Get-StatusValue -StatusObject $MDEAgentStatusRaw -Item "real_time_protection_enabled"
+$MDEHealthy = Get-StatusValue -StatusObject $MDEAgentStatus -Item "healthy"
+$MDELicensed = Get-StatusValue -StatusObject $MDEAgentStatus -Item "licensed"
+$MDERealTimeProtectionEnabled = Get-StatusValue -StatusObject $MDEAgentStatus -Item "real_time_protection_enabled"
 
 if ($MDEHealthy -ne "true")
 {
