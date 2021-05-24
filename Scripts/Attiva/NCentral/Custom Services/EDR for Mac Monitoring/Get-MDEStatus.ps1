@@ -11,7 +11,7 @@ It reads status information from the mdatp utility.
 ""
 
 $AttivaDataPath = "/var/Attiva/"
-$MDEStatusOutputFile = $AttivaDataPath + "mdr-status.txt"
+$MDEStatusOutputFile = $AttivaDataPath + "mde-status.txt"
 
 if (!(Test-Path $AttivaDataPath))
 {
@@ -37,7 +37,7 @@ function Get-StatusValue($StatusObject, $Item)
     
     #>
 
-    $SearchValue = $Item.ToLower() + " "                                 # Name of the value name plus a space
+    $SearchValue = $Item.ToLower() + " "                              # Name of the value name plus a space
     $ItemLine = $StatusObject | Select-String -Pattern $SearchValue      # Get the line containing the name of the value
     $ItemValue = ($ItemLine -split ": ")[1].Trim()
     return $ItemValue
@@ -48,12 +48,10 @@ $MDEHealthStatus = /usr/local/bin/mdatp health
 
 ""
 "Data collected from mdatp, processing..."
-""
-"Results:"
 
-$MDEHealthy = Get-StatusValue -StatusObject $MDEAgentStatus -Item "healthy"
-$MDELicensed = Get-StatusValue -StatusObject $MDEAgentStatus -Item "licensed"
-$MDERealTimeProtectionEnabled = Get-StatusValue -StatusObject $MDEAgentStatus -Item "real_time_protection_enabled"
+$MDEHealthy = Get-StatusValue -StatusObject $MDEHealthStatus -Item "healthy"
+$MDELicensed = Get-StatusValue -StatusObject $MDEHealthStatus -Item "licensed"
+$MDERealTimeProtectionEnabled = Get-StatusValue -StatusObject $MDEHealthStatus -Item "real_time_protection_enabled"
 
 if ($MDEHealthy -ne "true")
 {
@@ -78,6 +76,10 @@ else
 {
     $MDEHealthStatus = $MDEHealthStatus + [Environment]::NewLine + "MDE Healthy: No" 
 }
+
+""
+"Reported Health Status:"
+""
 
 $MDEHealthStatus
 
