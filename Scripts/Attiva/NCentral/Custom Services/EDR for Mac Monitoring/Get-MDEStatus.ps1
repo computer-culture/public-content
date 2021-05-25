@@ -27,7 +27,7 @@ if (!(Test-Path /usr/local/bin/mdatp))
     exit
 }
 
-$MDEHealthy = $true
+$MDEStatusHealthy = $true
 
 function Get-StatusValue($StatusObject, $Item)
 {
@@ -37,8 +37,8 @@ function Get-StatusValue($StatusObject, $Item)
     
     #>
 
-    $SearchValue = $Item.ToLower() + " "                              # Name of the value name plus a space
-    $ItemLine = $StatusObject | Select-String -Pattern $SearchValue      # Get the line containing the name of the value
+    $SearchValue = $Item.ToLower() + " "                                # Name of the value name plus a space
+    $ItemLine = $StatusObject | Select-String -Pattern $SearchValue     # Get the line containing the name of the value
     $ItemValue = ($ItemLine -split ": ")[1].Trim()
     return $ItemValue
 }
@@ -55,17 +55,17 @@ $MDERealTimeProtectionEnabled = Get-StatusValue -StatusObject $MDEHealthStatus -
 
 if ($MDEHealthy -ne "true")
 {
-    $MDEHealthy = $false
+    $MDEStatusHealthy = $false
 }
 
 if ($MDELicensed -ne "true")
 {
-    $MDEHealthy = $false
+    $MDEStatusHealthy = $false
 }
 
 if ($MDERealTimeProtectionEnabled -ne "true")
 {
-    $MDEHealthy = $false
+    $MDEStatusHealthy = $false
 }
 
 if ($MDEHealthy -eq $true)
@@ -82,6 +82,10 @@ else
 ""
 
 $MDEHealthStatus
+
+$Now = Get-Date
+$NowString = $Now.ToShortDateString() + " " + $Now.ToLongTimeString()
+$MDEHealthStatus = $MDEHealthStatus + [Environment]::NewLine + $NowString
 
 $MDEHealthStatus | Out-File $MDEStatusOutputFile
 
