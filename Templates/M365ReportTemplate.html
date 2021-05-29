@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <style>
+            h1
+            {
+                font-family: calibri, sans-serif;
+                color: #2F5496;
+                font-size: 18pt;
+                font-weight: bold;
+            }
+            h2
+            {
+                font-family: calibri, sans-serif;
+                color: #2F5496;
+                font-size: 15pt;
+            }
+            h3
+            {
+                font-family: calibri, sans-serif;
+                color: #2F5496;
+                font-size: 12pt;
+            }
+            h4
+            {
+                font-family: calibri, sans-serif;
+                color: #2F5496;
+                font-size: 12pt;
+                margin-bottom: 2px;
+            }
+            .ContentColumn
+            {
+                border-style: solid;
+                border-width: 1px; 
+                box-shadow: 5px 5px 5px #888888;
+                padding: 7px;
+            }
+            .Icon
+            {
+                width: 17px;
+                float: left;
+                margin: 0 5px 0 0;
+            }
+            .Description
+            {
+                font-family: calibri, sans-serif;
+                color:black;
+                font-size: 8pt;
+                text-align: center;
+                font-style: italic;
+                background-color: rgb(240, 240, 240);
+                border-width: 1px;
+                border-style: solid;
+                padding:3px;
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body style="font-size: 10pt; font-family: calibri, sans-serif;">
+
+        <!-- Header table -->
+        <table style="width: 210mm;">
+            <tr>
+                <td style="text-align: left;"">
+                    <h1>Microsoft 365 Tenant Report</h1>
+                </td>
+                <td style="text-align: right;">
+                    <img style="height: 50px;" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/CCLBannerLogo.jpg">
+                </td>
+            </tr>
+        </table>
+
+        <!-- Main Content -->
+        <table style="width: 210mm;">
+            <tr>
+
+                <!-- Left Column -->
+
+                <td style="width: 50%;">
+                    <div class="ContentColumn" style="height: 200mm;">
+                        <h1 style="text-align: center;">Company Details</h1>
+                        <p>
+                            Name: Computer Culture Ltd<br />
+                            Users: 15<br />
+                            Domains: 7<br />
+                        </p>
+
+                        <h2>Cloud Data</h2>
+
+                        <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconOutlook.png" />
+                        <h3>Mail</h3>
+                        
+                        <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconTeams.png" />
+                        <h3>Teams & SharePoint</h3>
+
+                        <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconOneDrive.png" />
+                        <h3>OneDrive</h3>
+
+                        <h3>Licenses</h3>
+
+                    </div>
+                </td>
+                <td style="width:3px"></td>
+
+                <!-- Right Column -->
+
+                <td style="width: 50%;">
+                    <div class="ContentColumn" style="height: 200mm;">
+                        <h1 style="text-align: center;">Security</h1>
+
+                        <h4>Microsoft Security Score</h4>
+
+                            <div style="text-align: center; font-size: 32pt;">68%</div>
+                            <div style="text-align: center; font-size: 10pt;">170 / 250</div>
+                            <div class="Description">Microsoft Secure Score is a measurement of an organization's security posture, with a higher number indicating more improvement actions that have been taken to increase security.</div>
+
+                        <h4>Multifactor Authentication Status</h4>
+
+                        <table>
+                            <tr>
+                                <td><img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/Cross.jpg" /></td>
+                                <td>MFA is not mandatory across all accounts</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="Description">Multi-factor authentication is a process where a user is prompted during the initial sign-in process for an additional form of identification, vastly increasing account security. It is considered a security baseline.</div>
+
+                        <h4>Modern Authentication</h4>
+
+                        <table>
+                            <tr>
+                                <td><img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/Tick.jpg" /></td>
+                                <td>All connections to your tenant are using modern authentication.</td>
+                            </tr>
+                        </table>
+
+                        <div class="Description">The use of modern authentication ensures all devices connecting to your company resources can be secured using technologies like MFA.</div>
+
+                        <h4>User Activity</h4>
+
+                        <table>
+                            <tr>
+                                <td><img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/Tick.jpg" /></td>
+                                <td>There are no inactive users in your tenant.</td>
+                            </tr>
+                        </table>
+
+                        <div class="Description">Inactive accounts are accounts that have not been signed in to for 90 days. As they pose a security issue, they should be removed from your directory if no longer needed.</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
