@@ -57,7 +57,7 @@
     </head>
     <body style="font-size: 10pt; font-family: calibri, sans-serif;">
 
-        <!-- Header table -->
+        <!-- Header Table -->
         <table style="width: 210mm;">
             <tr>
                 <td style="text-align: left;"">
@@ -79,23 +79,25 @@
                     <div class="ContentColumn" style="height: 200mm;">
                         <h1 style="text-align: center;">Company Details</h1>
                         <p>
-                            Name: Computer Culture Ltd<br />
-                            Users: 15<br />
-                            Domains: 7<br />
+                            [~CompanyDetails~]
                         </p>
 
                         <h2>Cloud Data</h2>
 
                         <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconOutlook.png" />
                         <h3>Mail</h3>
-                        
+                        [~MailTable~]
+
                         <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconTeams.png" />
                         <h3>Teams & SharePoint</h3>
+                        [~SharePointTable~]
 
                         <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconOneDrive.png" />
                         <h3>OneDrive</h3>
+                        [~OneDriveTable~]
 
                         <h3>Licenses</h3>
+                        [~LicensesTable~]
 
                     </div>
                 </td>
@@ -109,16 +111,16 @@
 
                         <h4>Microsoft Security Score</h4>
 
-                            <div style="text-align: center; font-size: 32pt;">68%</div>
-                            <div style="text-align: center; font-size: 10pt;">170 / 250</div>
+                            <div style="text-align: center; font-size: 32pt;">[~SecureScorePercent~]</div>
+                            <div style="text-align: center; font-size: 10pt;">[~SecureScoreValues~]</div>
                             <div class="Description">Microsoft Secure Score is a measurement of an organization's security posture, with a higher number indicating more improvement actions that have been taken to increase security.</div>
 
                         <h4>Multifactor Authentication Status</h4>
 
                         <table>
                             <tr>
-                                <td><img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/Cross.jpg" /></td>
-                                <td>MFA is not mandatory across all accounts</td>
+                                <td><img class="Icon" src="[~MFAStatusIcon~]" /></td>
+                                <td>[~MFAStatusDescription~]</td>
                             </tr>
                         </table>
                         
@@ -128,8 +130,8 @@
 
                         <table>
                             <tr>
-                                <td><img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/Tick.jpg" /></td>
-                                <td>All connections to your tenant are using modern authentication.</td>
+                                <td><img class="Icon" src="[~ModernAuthIcon~]" /></td>
+                                <td>[~ModernAuthDescription~]</td>
                             </tr>
                         </table>
 
@@ -139,8 +141,8 @@
 
                         <table>
                             <tr>
-                                <td><img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/Tick.jpg" /></td>
-                                <td>There are no inactive users in your tenant.</td>
+                                <td><img class="Icon" src="[~UserActivityIcon~]" /></td>
+                                <td>[~UserActivityDescription~]</td>
                             </tr>
                         </table>
 
