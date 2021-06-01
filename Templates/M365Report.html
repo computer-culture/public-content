@@ -19,6 +19,7 @@
                 font-family: calibri, sans-serif;
                 color: #2F5496;
                 font-size: 12pt;
+                margin-bottom: 2px;
             }
             h4
             {
@@ -61,13 +62,14 @@
                 margin-top: 0px;
                 margin-bottom: 10px;
                 border-collapse: collapse;
+                width: 100%;
             }
-            .DataTable tr
+            .DataTable th
             {
                 border-style: solid;
                 border-width: 1px;
                 border-color: black;
-                font-weight: bold;
+                padding: 2px;
             }
             .DataTable td
             {
@@ -75,6 +77,33 @@
                 border-width: 1px;
                 border-color: black;
                 padding: 2px;
+                text-align: center;
+            }
+            .LicenseTable
+            {
+                border-style: solid;
+                border-width: 1px;
+                border-color: black;
+                margin-top: 0px;
+                margin-bottom: 10px;
+                border-collapse: collapse;
+                width: 100%;
+                font-size: 10pt;
+            }
+            .LicenseTable th
+            {
+                border-style: solid;
+                border-width: 1px;
+                border-color: black;
+                padding: 2px;
+            }
+            .LicenseTable td
+            {
+                border-style: solid;
+                border-width: 1px;
+                border-color: black;
+                padding: 2px;
+                text-align: left;
             }
         </style>
     </head>
@@ -107,16 +136,22 @@
 
                         <h2>Cloud Data</h2>
 
-                        <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconOutlook.png" />
-                        <h3>Mail</h3>
+                        <div class="TableHeading">
+                            <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconOutlook.png" />
+                            <h3>Mail</h3>
+                        </div>
                         [~MailTable~]
 
-                        <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconTeams.png" />
-                        <h3>Teams & SharePoint</h3>
+                        <div class="TableHeading">
+                            <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconTeams.png" />
+                            <h3>Teams & SharePoint</h3>
+                        </div>
                         [~SharePointTable~]
 
-                        <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconOneDrive.png" />
-                        <h3>OneDrive</h3>
+                        <div class="TableHeading">
+                            <img class="Icon" src="https://raw.githubusercontent.com/computer-culture/public-content/master/Images/Icons/MSIconOneDrive.png" />
+                            <h3>OneDrive</h3>
+                        </div>
                         [~OneDriveTable~]
 
                         <h3>Licenses</h3>
