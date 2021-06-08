@@ -105,11 +105,29 @@
                 padding: 2px;
                 text-align: left;
             }
+            .UsageTable
+            {
+                
+            }
+            .UsageTable th
+            {
+                padding-right: 15px;
+                text-align: left;
+            }
+            .UsageTable td
+            {
+                padding-right: 15px;
+                text-align: left;
+            }
+            .UsageTable tr:nth-child(even)
+            {
+                /* background-color: #dddddd; */
+            }
         </style>
     </head>
     <body style="font-size: 10pt; font-family: calibri, sans-serif;">
 
-        <!-- Header Table -->
+        <!-- Page 1 Header -->
         <table style="width: 210mm;">
             <tr>
                 <td style="text-align: left;"">
@@ -121,7 +139,10 @@
             </tr>
         </table>
 
-        <!-- Main Content -->
+        <!-- End of Page 1 Header -->
+
+        <!-- Page 1 Content -->
+
         <table style="width: 210mm;">
             <tr>
 
@@ -160,6 +181,8 @@
                     </div>
                 </td>
                 <td style="width:3px"></td>
+
+                <!-- End of Left Column -->
 
                 <!-- Right Column -->
 
@@ -207,7 +230,48 @@
                         <div class="Description">Inactive accounts are accounts that have not been signed in to for 90 days. As they pose a security issue, they should be removed from your directory if no longer needed.</div>
                     </div>
                 </td>
+
+                <!-- End of Right Column -->
+
             </tr>
         </table>
+
+        <!-- End of Page 1 Content -->
+
+        <!-- Usage Content -->
+
+        <table style="width: 210mm;">
+            <tr>
+                <td>
+                    <div class="ContentColumn">
+
+                        [~MailboxUsage~]
+            
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ContentColumn">
+
+                        [~OneDriveUsage~]
+            
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ContentColumn">
+
+                        [~SharePointUsage~]
+            
+                    </div>
+                </td>
+            </tr>
+            
+        </table>        
+
+        <!-- End of Usage Content -->
+
     </body>
 </html>
