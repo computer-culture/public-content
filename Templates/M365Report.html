@@ -34,6 +34,7 @@
                 border-width: 1px; 
                 box-shadow: 5px 5px 5px #888888;
                 padding: 7px;
+                margin-bottom: 5px;
             }
             .Icon
             {
@@ -46,7 +47,7 @@
                 font-family: calibri, sans-serif;
                 color:black;
                 font-size: 8pt;
-                text-align: center;
+                text-align: left;
                 font-style: italic;
                 background-color: rgb(240, 240, 240);
                 border-width: 1px;
@@ -107,7 +108,7 @@
             }
             .UsageTable
             {
-                
+                margin-top: 10px;
             }
             .UsageTable th
             {
@@ -245,6 +246,33 @@
                 <td>
                     <div class="ContentColumn">
 
+                        <h2>Sign-in Information</h2>
+                        <div class="Description">This is a summary of sign-in information for your Microsoft 365 tenant. Check for successful sign-ins from countries that should not be there, and for any legacy protocols in use.</div>
+
+                        [~SigninInfo~]
+            
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ContentColumn">
+
+                        <h2>Inactive Users</h2>
+                        <div class="Description">The following is a list of inactive users detected in your tenant that require attention.</div>
+
+                        [~InactiveUsers~]
+            
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ContentColumn">
+
+                        <h2>Mailbox Usage (Top 10)</h2>
+                        <div class="Description">This report shows users with the highest usage on their mailboxes. If mailboxes are nearing capacity, solutions such as online archiving can be put in place, or mailboxes can be expanded if required. We monitor this usage and will advise if mailboxes approach quota limits.</div>
+
                         [~MailboxUsage~]
             
                     </div>
@@ -254,6 +282,9 @@
                 <td>
                     <div class="ContentColumn">
 
+                        <h2>OneDrive Usage (Top 10)</h2>
+                        <div class="Description">This report shows users with the highest data use in their OneDrive accounts. Excessive usage could be an indication staff are storing company files in their OneDrive accounts instead of company locations. We monitor this usage and will advise if it nears quota limits.</div>
+                        
                         [~OneDriveUsage~]
             
                     </div>
@@ -262,6 +293,9 @@
             <tr>
                 <td>
                     <div class="ContentColumn">
+
+                        <h2>Company SharePoint Sites</h2>
+                        <div class="Description">This report shows all SharePoint / Teams sites in the company. Its a good reminder of where company data is stored online (if at all), and if any unneeded sites can be archived. We monitor usage on each site and will advise if any site nears its quota limits.</div>
 
                         [~SharePointUsage~]
             
