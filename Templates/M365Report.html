@@ -191,11 +191,11 @@
                     <div class="ContentColumn" style="height: 200mm;">
                         <h1 style="text-align: center;">Security</h1>
 
-                        <h4>Microsoft Security Score</h4>
+                        <h4>Microsoft Secure Score</h4>
 
                             <div style="text-align: center; font-size: 32pt;">[~SecureScorePercent~]</div>
                             <div style="text-align: center; font-size: 10pt;">[~SecureScoreValues~]</div>
-                            <div class="Description">Microsoft Secure Score is a measurement of an organization's security posture, with a higher number indicating that more improvement actions have been taken to increase security.</div>
+                            <div class="Description">Secure Score is a measure, provided by Microsoft, of an organization's security posture, The lower the number, the more actions that need to be taken to address security concerns in the Microsoft 365 tenant.</div>
 
                         <h4>Multifactor Authentication Status (MFA)</h4>
 
@@ -206,7 +206,7 @@
                             </tr>
                         </table>
                         
-                        <div class="Description">Multi-factor authentication is a process where a user is prompted during the initial sign-in process for an additional form of identification, vastly increasing account security. It is considered a security baseline.</div>
+                        <div class="Description">Multi-factor authentication is a process where a user is prompted during the initial sign-in process for an additional form of identification, vastly increasing account security. It is considered a security baseline. Without it, your users' accounts are at much greater risk of being compromised.</div>
 
                         <h4>Modern Authentication</h4>
 
@@ -217,7 +217,7 @@
                             </tr>
                         </table>
 
-                        <div class="Description">The use of Modern authentication (as opposed to Legacy) ensures all devices connecting to your company resources can be secured using technologies like MFA. Conditional Access or Security Defaults can be used to block Legacy sign-ins.</div>
+                        <div class="Description">Legacy (as opposed to Modern) sign-ins are an indication that obsolete or insecure methods are being used to access your company data. Common examples include the way mobile phones used to have email configured on them, or the way scan to email on a photocopier was configured. These older protocols are often what malicious actors used to get access to your data, and they should be disabled.</div>
 
                         <h4>User Activity</h4>
 
@@ -228,7 +228,7 @@
                             </tr>
                         </table>
 
-                        <div class="Description">Inactive accounts are accounts that have not been signed in to for 90 days. As they pose a security issue, they should be removed from your directory if no longer needed.</div>
+                        <div class="Description">Inactive accounts are accounts that have not been signed in to for 90 days. They should be removed from your directory if they are no longer needed, to maintain data integrity, and to remove the security risk they pose (inactive accounts can allow previous employees access to data they are no longer authorised to access, and they also provide a potential target for hackers).</div>
                     </div>
                 </td>
 
@@ -249,7 +249,9 @@
                         <h2>Email Security</h2>
                         <div class="Description">
                             This is a list of all email enabled domain names in your Microsoft 365 tenant.
-                            It is important they all have valid SPF and DKIM DNS records to prevent spoofing of your domain
+                            It is important they all have valid SPF and DKIM DNS records to prevent spoofing of your domain.
+                            Without these protections, it is easier for a malicious actor to pose as a representative of your company when sending an email.
+                            As an example, this is often used to forge email invoices that include incorrect bank details, with the intention of intercepting large sums of money.
                         </div>
 
                         [~Domains~]
@@ -263,11 +265,11 @@
 
                         <h2>Sign-in Information</h2>
                         <div class="Description">
-                            This is a summary of sign-in information for your Microsoft 365 tenant.
-                            Check for successful sign-ins from countries that should not be there, and for any Legacy protocols in use.
-                            All sign-ins should be from apps that use Modern authentication. 
-                            "Mobile Apps and Desktop Clients" includes apps such as the latest versions of Outlook for PC or Mobile,
-                            or the latest versions of Mail for iOS and Gmail for Android.
+                            This is a summary of sign-in information for your Microsoft 365 tenant over the last 30 days.
+                            It shows the countries where sign-in attempts are occurring from, and which which ones were successful.
+                            If you see a sign-in from a country that does not appear valid, it will require some investigation to ensure it is legitimate.<br /><br />
+                            This report also shows the protocols used to sign in to your tenant, and if there are any legacy protocols in use, who is using them, so they can be addressed.
+                            "Mobile Apps and Desktop Clients" includes apps such as the latest versions of Outlook for PC or Mobile, or the latest versions of Mail for iOS and Gmail for Android.
                         </div>
 
                         [~SigninInfo~]
