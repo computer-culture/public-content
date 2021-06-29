@@ -195,7 +195,11 @@
 
                             <div style="text-align: center; font-size: 32pt;">[~SecureScorePercent~]</div>
                             <div style="text-align: center; font-size: 10pt;">[~SecureScoreValues~]</div>
-                            <div class="Description">Secure Score is a measure, provided by Microsoft, of an organization's security posture, The lower the number, the more actions that need to be taken to address security concerns in the Microsoft 365 tenant.</div>
+                            <div class="Description">
+                                Secure Score is a measure provided by Microsoft of an organization's security posture.
+                                The higher the number the better.
+                                The lower the number, the more actions that need to be taken to address security concerns in the Microsoft 365 tenant.
+                            </div>
 
                         <h4>Multifactor Authentication Status (MFA)</h4>
 
@@ -206,7 +210,11 @@
                             </tr>
                         </table>
                         
-                        <div class="Description">Multi-factor authentication is a process where a user is prompted during the initial sign-in process for an additional form of identification, vastly increasing account security. It is considered a security baseline. Without it, your users' accounts are at much greater risk of being compromised.</div>
+                        <div class="Description">
+                            Multi-factor authentication is a process where a user is prompted during the initial sign-in process for an additional form of identification.
+                            By adding MFA account security is vastly increased.
+                            It is considered a security baseline and without it, your users' accounts are at much greater risk of being compromised.
+                        </div>
 
                         <h4>Modern Authentication</h4>
 
@@ -217,9 +225,14 @@
                             </tr>
                         </table>
 
-                        <div class="Description">Legacy (as opposed to Modern) sign-ins are an indication that obsolete or insecure methods are being used to access your company data. Common examples include the way mobile phones used to have email configured on them, or the way scan to email on a photocopier was configured. These older protocols are often what malicious actors used to get access to your data, and they should be disabled.</div>
+                        <div class="Description">
+                            Legacy (as opposed to Modern) sign-ins are an indication that obsolete or insecure methods are being used to access your company data.
+                            Common examples include the way mobile phones used to have email configured on them,
+                            or the way 'scan to email' on a photocopier was configured. 
+                            These older protocols are often what malicious actors use to get access to your data and should be disabled.
+                        </div>
 
-                        <h4>User Activity</h4>
+                        <h4>Inactive Accounts</h4>
 
                         <table>
                             <tr>
@@ -228,7 +241,11 @@
                             </tr>
                         </table>
 
-                        <div class="Description">Inactive accounts are accounts that have not been signed in to for 90 days. They should be removed from your directory if they are no longer needed, to maintain data integrity, and to remove the security risk they pose (inactive accounts can allow previous employees access to data they are no longer authorised to access, and they also provide a potential target for hackers).</div>
+                        <div class="Description">
+                            Inactive accounts are accounts that have not been signed in to for 90 days.
+                            They should be removed from your directory if they are no longer needed, to maintain data integrity, and to remove the security risk they pose
+                            (inactive accounts can allow previous employees access to data they are no longer authorised to access, and they also provide a potential target for hackers).
+                        </div>
                     </div>
                 </td>
 
@@ -266,9 +283,10 @@
                         <h2>Sign-in Information</h2>
                         <div class="Description">
                             This is a summary of sign-in information for your Microsoft 365 tenant over the last 30 days.
-                            It shows the countries where sign-in attempts are occurring from, and which which ones were successful.
-                            If you see a sign-in from a country that does not appear valid, it will require some investigation to ensure it is legitimate.<br /><br />
-                            This report also shows the protocols used to sign in to your tenant, and if there are any legacy protocols in use, who is using them, so they can be addressed.
+                            It shows the countries where sign-in attempts have come from, and which ones were successful.
+                            If you see a sign-in from a country that does not appear valid, it will require some investigation to ensure it is legitimate.
+                            <br /><br />
+                            This report also shows the protocols that have been used to sign in to your tenant, if there are any legacy protocols in use, and who is using them.
                             "Mobile Apps and Desktop Clients" includes apps such as the latest versions of Outlook for PC or Mobile, or the latest versions of Mail for iOS and Gmail for Android.
                         </div>
 
@@ -294,7 +312,11 @@
                     <div class="ContentColumn">
 
                         <h2>Mailbox Usage (Top 10)</h2>
-                        <div class="Description">This report shows users with the highest usage on their mailboxes. If mailboxes are nearing capacity, solutions such as online archiving can be put in place, or mailboxes can be expanded if required. We monitor this usage and will advise if mailboxes approach quota limits.</div>
+                        <div class="Description">
+                            This report shows the top 10 accounts using the most amount of storage for email.
+                            If email storage is nearing capacity online archiving can be put in place or mailboxes can be expanded if required. 
+                            We monitor email storage and advise if mailboxes are nearing capacity. 
+                        </div>
 
                         [~MailboxUsage~]
             
@@ -306,7 +328,11 @@
                     <div class="ContentColumn">
 
                         <h2>OneDrive Usage (Top 10)</h2>
-                        <div class="Description">This report shows users with the highest data use in their OneDrive accounts. Excessive usage could be an indication staff are storing company files in their OneDrive accounts instead of company locations. We monitor this usage and will advise if it nears quota limits.</div>
+                        <div class="Description">
+                            This report shows users with the most amount of data in their personal OneDrive accounts.
+                            Excessive usage could be an indication staff are storing company files in their personal OneDrive accounts instead of company locations. 
+                            We monitor OneDrive storage and advise if nearing capacity. 
+                        </div>
                         
                         [~OneDriveUsage~]
             
@@ -318,7 +344,11 @@
                     <div class="ContentColumn">
 
                         <h2>Company SharePoint Sites</h2>
-                        <div class="Description">This report shows all SharePoint / Teams sites in the company. Its a good reminder of where company data is stored online (if at all), and if any unneeded sites can be archived. We monitor usage on each site and will advise if any site nears its quota limits.</div>
+                        <div class="Description">
+                            This report shows all SharePoint / Teams sites within the Microsoft 365 tenant.
+                            This information is useful as a reminder of where company data is stored, if any unauthorised sites have been created and if any unneeded sites can be archived.
+                            We monitor SharePoint storage on each site and advise if nearing capacity. 
+                        </div>
 
                         [~SharePointUsage~]
             
