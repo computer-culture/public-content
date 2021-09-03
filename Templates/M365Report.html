@@ -1,5 +1,6 @@
 <html>
     <head>
+
         <style>
             h1
             {
@@ -26,6 +27,7 @@
                 font-family: calibri, sans-serif;
                 color: #2F5496;
                 font-size: 12pt;
+                margin-top: 12px;
                 margin-bottom: 2px;
             }
             .ContentColumn
@@ -200,6 +202,7 @@
 
                             <div style="text-align: center; font-size: 32pt;">[~SecureScorePercent~]</div>
                             <div style="text-align: center; font-size: 10pt;">[~SecureScoreValues~]</div>
+                            <div style="text-align: center; font-size: 10pt;"><canvas id="secureScoreChart" width="200" height="50"></canvas></div>
                             <div class="Description">
                                 Secure Score is a measure provided by Microsoft of an organisation's security posture (the overall cybersecurity strength).
                                 The higher the number the better.
@@ -365,6 +368,42 @@
         </table>        
 
         <!-- End of Usage Content -->
+
+        <!-- Script to render Secure Score chart -->
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+            const data = {
+                labels: [[~SecureScoreData~]],
+                datasets: [{
+                    label: 'Last 90 Days',
+                    data: [[~SecureScoreData~]],
+                    pointRadius: 0,
+                    borderColor: "#5983ca"
+                }]
+            };
+
+            const config = {
+                type: 'line',
+                data: data,
+                options: {
+                    scales:{
+                        x: {
+                            display: false
+                        }
+                    }
+                }
+            };
+
+            var secureScoreChart = new Chart(
+                document.getElementById('secureScoreChart'),
+                config
+            );
+
+        </script>
+
+
 
     </body>
 </html>
