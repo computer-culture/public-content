@@ -8,6 +8,8 @@
                 color: #2F5496;
                 font-size: 18pt;
                 font-weight: bold;
+                margin-bottom: 10px;
+                margin-top: 10px;
             }
             h2
             {
@@ -180,7 +182,9 @@
                         <h1 style="text-align: center;">Microsoft 365 Licenses</h1>
 
                         <div class="Description">
-                            This is a summary of the licensed services you have with Microsoft.
+                            This is a summary of the licensed services you have with Microsoft. 
+                            Some are paid services you have subscribed to, and some come bundled for free as part of your plans. 
+                            Please contact us if you have any questions about these.
                         </div>
                         <br />
 
@@ -200,9 +204,9 @@
 
                         <h4>Microsoft Secure Score</h4>
 
-                            <div style="text-align: center; font-size: 32pt;">[~SecureScorePercent~]</div>
+                            <div style="text-align: center; font-size: 26pt;">[~SecureScorePercent~]</div>
                             <div style="text-align: center; font-size: 10pt;">[~SecureScoreValues~]</div>
-                            <div style="text-align: center; font-size: 10pt;"><canvas id="secureScoreChart" width="200" height="50"></canvas></div>
+                            <div style="text-align: center; font-size: 10pt;"><canvas id="secureScoreChart" width="200" height="70"></canvas></div>
                             <div class="Description">
                                 Secure Score is a measure provided by Microsoft of an organisation's security posture (the overall cybersecurity strength).
                                 The higher the number the better.
@@ -410,6 +414,11 @@
                     scales:{
                         x: {
                             display: false
+                        },
+                        y: {
+                            beginAtZero: true,
+                            min: 0,
+                            max: 100
                         }
                     }
                 }
