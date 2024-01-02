@@ -13,7 +13,7 @@ AS,American Samoa
 AT,Austria
 AU,Australia
 AW,Aruba
-AX,Åland Islands
+AX,Ã…land Islands
 AZ,Azerbaijan
 BA,Bosnia and Herzegovina
 BB,Barbados
@@ -24,11 +24,11 @@ BG,Bulgaria
 BH,Bahrain
 BI,Burundi
 BJ,Benin
-BL,Saint Barthélemy
+BL,Saint BarthÃ©lemy
 BM,Bermuda
 BN,Brunei Darussalam
-BO,Bolivia (Plurinational State of)
-BQ,"Bonaire, Sint Eustatius and Saba"
+BO,Plurinational State of Bolivia
+BQ,BES Islands
 BR,Brazil
 BS,Bahamas
 BT,Bhutan
@@ -38,11 +38,11 @@ BY,Belarus
 BZ,Belize
 CA,Canada
 CC,Cocos (Keeling) Islands
-CD,"Congo, Democratic Republic of the"
+CD,Democratic Republic of the Congo
 CF,Central African Republic
 CG,Congo
 CH,Switzerland
-CI,Côte d'Ivoire
+CI,CÃ´te d'Ivoire
 CK,Cook Islands
 CL,Chile
 CM,Cameroon
@@ -51,7 +51,7 @@ CO,Colombia
 CR,Costa Rica
 CU,Cuba
 CV,Cabo Verde
-CW,Curaçao
+CW,CuraÃ§ao
 CX,Christmas Island
 CY,Cyprus
 CZ,Czechia
@@ -70,8 +70,8 @@ ES,Spain
 ET,Ethiopia
 FI,Finland
 FJ,Fiji
-FK,Falkland Islands (Malvinas)
-FM,Micronesia (Federated States of)
+FK,Falkland Islands (Islas Malvinas)
+FM,Federated States of Micronesia
 FO,Faroe Islands
 FR,France
 GA,Gabon
@@ -106,7 +106,7 @@ IM,Isle of Man
 IN,India
 IO,British Indian Ocean Territory
 IQ,Iraq
-IR,Iran (Islamic Republic of)
+IR,Islamic Republic of Iran
 IS,Iceland
 IT,Italy
 JE,Jersey
@@ -119,8 +119,8 @@ KH,Cambodia
 KI,Kiribati
 KM,Comoros
 KN,Saint Kitts and Nevis
-KP,Korea (Democratic People's Republic of)
-KR,"Korea, Republic of"
+KP,North Korea
+KR,South Korea
 KW,Kuwait
 KY,Cayman Islands
 KZ,Kazakhstan
@@ -137,7 +137,7 @@ LV,Latvia
 LY,Libya
 MA,Morocco
 MC,Monaco
-MD,"Moldova, Republic of"
+MD,Republic of Moldova
 ME,Montenegro
 MF,Saint Martin (French part)
 MG,Madagascar
@@ -181,12 +181,12 @@ PL,Poland
 PM,Saint Pierre and Miquelon
 PN,Pitcairn
 PR,Puerto Rico
-PS,"Palestine, State of"
+PS,Palestine
 PT,Portugal
 PW,Palau
 PY,Paraguay
 QA,Qatar
-RE,Réunion
+RE,RÃ©union
 RO,Romania
 RS,Serbia
 RU,Russian Federation
@@ -197,7 +197,7 @@ SC,Seychelles
 SD,Sudan
 SE,Sweden
 SG,Singapore
-SH,"Saint Helena, Ascension and Tristan da Cunha"
+SH,Saint Helena and Ascension and Tristan da Cunha
 SI,Slovenia
 SJ,Svalbard and Jan Mayen
 SK,Slovakia
@@ -209,7 +209,7 @@ SR,Suriname
 SS,South Sudan
 ST,Sao Tome and Principe
 SV,El Salvador
-SX,Sint Maarten (Dutch part)
+SX,Dutch Sint Maarten
 SY,Syrian Arab Republic
 SZ,Eswatini
 TC,Turks and Caicos Islands
@@ -226,8 +226,8 @@ TO,Tonga
 TR,Turkey
 TT,Trinidad and Tobago
 TV,Tuvalu
-TW,"Taiwan, Province of China"
-TZ,"Tanzania, United Republic of"
+TW,Taiwan
+TZ,United Republic of Tanzania
 UA,Ukraine
 UG,Uganda
 UM,United States Minor Outlying Islands
@@ -236,9 +236,9 @@ UY,Uruguay
 UZ,Uzbekistan
 VA,Holy See
 VC,Saint Vincent and the Grenadines
-VE,Venezuela (Bolivarian Republic of)
-VG,Virgin Islands (British)
-VI,Virgin Islands (U.S.)
+VE,Bolivarian Republic of Venezuela
+VG,British Virgin Islands
+VI,US Virgin Islands
 VN,Viet Nam
 VU,Vanuatu
 WF,Wallis and Futuna
