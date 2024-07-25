@@ -1094,6 +1094,7 @@ function Initialize-Environment
     {
         if (Test-InsideDockerContainer -and ($env:ccldebug -ne $true))
         {
+            Write-Host "Running inside Docker container, getting variables from N-central"
             # Run from N-central, so pass in required variables
             $global:AzureAdAppId               = $M365PartnerAppID
             $global:AzureAdAppSecret           = $M365PartnerAppSecret
@@ -1104,6 +1105,7 @@ function Initialize-Environment
         }
         else
         {
+            Write-Host "Running as a script, getting variables from Environment Variables"
             # Run as a script, so domain name passed in as parameter
             $global:AzureAdAppId               = [System.Environment]::GetEnvironmentVariable("CCLPARTNERAPPAPPID", "Machine") 
             $global:AzureAdAppSecret           = [System.Environment]::GetEnvironmentVariable("CCLPARTNERAPPPASSWORD", "Machine")
@@ -1114,6 +1116,7 @@ function Initialize-Environment
     }
     else 
     {
+        Write-Host "Running interactively, getting variables from Environment Variables"
         # Run interactively for debugging, so lets provide test variables
         $global:AzureAdAppId               = [System.Environment]::GetEnvironmentVariable("CCLPARTNERAPPAPPID", "Machine") 
         $global:AzureAdAppSecret           = [System.Environment]::GetEnvironmentVariable("CCLPARTNERAPPPASSWORD", "Machine")
