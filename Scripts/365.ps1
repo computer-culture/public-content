@@ -1125,6 +1125,8 @@ function Initialize-Environment
         $TenantPrimaryDomain        = $M365TenantPrimaryDomain
     }
 
+    Write-Host "App ID: $($global:AzureAdAppId)"
+
     # Create local storage folder if it doesn't already exist
     if (!(Test-Path $LocalDataSaveLocation))
     {
