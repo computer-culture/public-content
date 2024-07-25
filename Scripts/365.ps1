@@ -1090,13 +1090,12 @@ function Initialize-Environment
 
     # Get authentication details for APIs we will be accessing
 
+    "Initialise 1...."
+
     if ([Environment]::UserInteractive -eq $false)
     {
         $RunningInDocker = Test-InsideDockerContainer
-        if ($RunningInDocker)
-        {
-            "Running in Docker"
-        }
+        "Running in Docker: $RunningInDocker"
         if (($RunningInDocker) -and (!(Test-Path "C:\Probe\debug")))
         {
             "Running inside Docker container, getting variables from N-central"
