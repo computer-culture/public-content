@@ -1,5 +1,7 @@
 <#
 
+    TEST
+    
     .SYNOPSIS
     Connects to a Microsoft 365 tenant and gathers baseline data
 
