@@ -326,7 +326,7 @@ function Get-M365Tenant
 
     if ($global:M365Tenant.OnPremisesSyncEnabled)
     {
-        $global:M365Tenant.LastOnPremisesSyncTime = $Tenant.onPremisesLastSyncDateTime.ToLocalTime()
+        $global:M365Tenant.LastOnPremisesSyncTime = ([DateTime]($Tenant.onPremisesLastSyncDateTime)).ToLocalTime()
     }  
     
     "Getting admin report settings..."
@@ -1092,7 +1092,7 @@ function Initialize-Environment
 
     if ([Environment]::UserInteractive -eq $false)
     {
-        if (Test-InsideDockerContainer)
+        if (Test-InsideDockerContainer -and ($env:ccldebug -ne $true))
         {
             # Run from N-central, so pass in required variables
             $global:AzureAdAppId               = $M365PartnerAppID
