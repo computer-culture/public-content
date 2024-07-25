@@ -1092,7 +1092,7 @@ function Initialize-Environment
 
     if ([Environment]::UserInteractive -eq $false)
     {
-        if (Test-InsideDockerContainer -and ($env:ccldebug -ne $true))
+        if (Test-InsideDockerContainer -and ($env:ccldebug -ne "1"))
         {
             "Running inside Docker container, getting variables from N-central"
             # Run from N-central, so pass in required variables
